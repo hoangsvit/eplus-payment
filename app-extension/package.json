@@ -1,0 +1,22 @@
+{
+  "name": "quasar-app-extension-eplus-payment",
+  "version": "0.0.1",
+  "description": "A Quasar App Extension",
+  "author": "David Nguyen <h250694@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoangsvit/eplus-payment"
+  },
+  "bugs": "https://github.com/hoangsvit/eplus-payment/issues",
+  "homepage": "https://eplus.dev",
+  "dependencies": {
+    "quasar-ui-eplus-payment": "latest"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  }
+}
