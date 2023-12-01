@@ -1,16 +1,41 @@
-<img src="https://img.shields.io/npm/v/quasar-ui-eplus-payment.svg?label=quasar-ui-eplus-payment">
-<img src="https://img.shields.io/npm/v/quasar-app-extension-eplus-payment.svg?label=quasar-app-extension-eplus-payment">
+# ePlus Payment (eplus-payment)
 
-Compatible with Quasar UI v2 and Vue 3.
+ePlus Payment
 
-# Structure
-* [/ui](ui) - standalone npm package
+## Install the dependencies
+```bash
+yarn
+# or
+npm install
+```
 
-* [/app-extension](app-extension) - Quasar app extension
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
 
 
-# Donate
-If you appreciate the work that went into this project, please consider [donating to Quasar](https://donate.quasar.dev).
+### Lint the files
+```bash
+yarn lint
+# or
+npm run lint
+```
 
-# License
-MIT (c) David Nguyen <h250694@gmail.com>
+
+### Format the files
+```bash
+yarn format
+# or
+npm run format
+```
+
+
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
