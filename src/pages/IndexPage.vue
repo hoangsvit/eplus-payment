@@ -1,49 +1,89 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+      <q-input
+        filled
+        v-model="name"
+        label="Tổng số tiền thanh toán *"
+        type="number"
+      />
+
+      <q-input
+        filled
+        type="number"
+        v-model="age"
+        label="Họ tên người thanh toán *"
+      />
+
+      <q-input filled type="number" v-model="age" label="SĐT thanh toán *" />
+
+      <q-input filled type="number" v-model="age" label="Email thanh toán *" />
+
+      <q-input v-model="time" filled type="time" hint="Native time" />
+
+      <q-input v-model="date" filled type="date" hint="Native date" />
+
+      <div>
+        <q-btn label="Submit" type="submit" color="primary" />
+        <q-btn
+          label="Reset"
+          type="reset"
+          color="primary"
+          flat
+          class="q-ml-sm"
+        />
+      </div>
+    </q-form>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { useQuasar } from 'quasar';
+import { ref } from 'vue';
 
-export default defineComponent({
-  name: 'IndexPage',
-  components: { ExampleComponent },
-  setup () {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
+export default {
+  setup() {
+    const $q = useQuasar();
+
+    const name = ref(null);
+    const age = ref(null);
+    const accept = ref(false);
+    const time = ref(null);
+    const date = ref(null);
+
+    return {
+      name,
+      age,
+      accept,
+      time,
+      date,
+
+      onSubmit() {
+        // if (accept.value !== true) {
+        //   $q.notify({
+        //     color: "red-5",
+        //     textColor: "white",
+        //     icon: "warning",
+        //     message: "You need to accept the license and terms first",
+        //   });
+        // } else {
+        //   $q.notify({
+        //     color: "green-4",
+        //     textColor: "white",
+        //     icon: "cloud_done",
+        //     message: "Submitted",
+        //   });
+        // }
       },
-      {
-        id: 2,
-        content: 'ct2'
+
+      onReset() {
+        name.value = null;
+        age.value = null;
+        accept.value = false;
+        time.value = null;
+        date.value = null;
       },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    return { todos, meta };
-  }
-});
+    };
+  },
+};
 </script>
